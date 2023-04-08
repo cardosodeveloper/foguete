@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="author" content="Cardoso">
+		<meta name="description" content="Foguete em loop feito e HTML, CSS e JavaScript.">
+		<meta name="keywords" content="foguete, html, css, javascript">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="style.css">
+
+		<title>Foguete | Cardoso Dev</title>
+	</head>
+
+	<body>
+		<main>			
+			<section class="foguete">
+				<div class="foguete__acao">
+           			 <div class="foguete__acao__rocket">
+                		<img src="foguete.png" alt="">
+           			 </div>
+       			 </div>
+        		<script>
+	            	function stars(){
+	                let count = 150;
+	                let foguete__acao = document.querySelector('.foguete__acao');
+	                let i =0;
+	                while(i < count){
+	                    let star = document.createElement('i');
+	                    let x = Math.floor(Math.random() * window.innerWidth);
+	                    let duration = Math.random() * 1;
+	                    let h = Math.random() * 100;
+
+	                    star.style.left = x + 'px';
+	                    star.style.width = 1 + 'px';
+	                    star.style.height = 60 + 'px';
+	                    star.style.animationDuration = duration + 's';
+	                    
+	                    foguete__acao.appendChild(star);
+	                    i++;
+	                	}
+	            	}
+	            	stars();
+       			</script>
+	    	</section>
+
+		    <section>
+		        <a href="https://github.com/cardosodeveloper" class="botao__github"><i class="fa fa-github"></i></a>
+		    </section>
+   
+		</main>
+
+		<footer class="rodape">
+			<h4>Cardoso - 2023 | Todos os Direitos Reservados</h4>
+			<p>Desenvolvido com ❤️ em Porto Alegre</p>
+			<a href="https://github.com/cardosodeveloper" class="rodape__botao__dev">Acesse meu GitHub</a>
+		</footer>
+
+	</body>
+</html>

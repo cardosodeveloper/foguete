@@ -1,0 +1,168 @@
+
+/************************ VARIAVEIS ATIVAS ************************/
+
+:root {
+    --cor-primaria: #301e67;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+
+    --botao-github: #532f9d;
+    --botao-github-efeito: #8363c5;
+
+    --fonte-primaria: 'Krona one', sans-serif;
+    --fonte-secundária: 'Montserrat', sans-serif;
+}
+
+/************************ VARIAVEIS ATIVAS ************************/
+
+
+/* Configurações Default */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações Default */
+
+/* Início Foguete */
+
+.foguete__acao {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: var(--cor-primaria);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foguete__acao i{
+    position: absolute;
+    top: -250px;
+    background: rgba(255,255,255, 0.5);
+    animation: animateStars linear infinite;
+}
+@keyframes animateStars {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(200vh);
+    }
+}
+
+.foguete__acao .foguete__acao__rocket{
+    position: relative;
+    animation: animate 0.2s ease infinite;
+}
+@keyframes animate {
+        0%,100%{
+            transform: translateY(-2px);
+        }
+        50%{
+            transform: translateY(2px);
+        }
+
+}
+.foguete__acao .foguete__acao__rocket::before{
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(#00d0ff,transparent);
+}
+
+.foguete__acao .foguete__acao__rocket::after{
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(#00d0ff,transparent);
+    filter: blur(20px);
+}
+
+/* Final Foguete */
+
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-terciaria);
+    padding: 75px 0 75px 0;
+    text-align: center;
+    font-family: var(--fonte-secundária);
+    font-weight: 400;
+}
+
+.rodape__logo {
+    width: 5%;
+    margin: 0 0 25px 0;
+}
+
+.rodape__botao__dev {
+    width: 25%;
+    border-radius: 8px;
+    padding: 0.5em;
+    background-color: var(--botao-github);
+    color: var(--branco-principal);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1em;
+    transition: 600ms;
+    margin: 20px 0;
+}
+
+.rodape__botao__dev:hover {
+    background-color: var(--botao-github-efeito);
+    transition: 600ms;
+}
+
+/*********** Botão GitHub ***********/
+
+.botao__github {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:var(--botao-github);
+    color:var(--cor-secundaria);
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:1000;
+    transition: 600ms;
+}
+
+.botao__github a{
+    text-decoration: none;
+    color: var(--branco-principal);
+}
+
+.botao__github i{
+    margin-top: 16px;
+}
+
+.botao__github:hover {
+    background-color: var(--botao-github-efeito);
+    transition: 600ms;
+}
+
+/*********** Botão GitHub ***********/
+
+@media (max-width: 940px) {
+    .rodape__botao__dev {
+        width: 60%;
+    }
+}
